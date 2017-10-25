@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { withTracker } from 'meteor/react-meteor-data';
+import {Grid, Row, Col, Button } from 'react-bootstrap';
+
 
 import { Trips } from '../api/trips.js'
 
@@ -38,7 +40,8 @@ class App extends Component {
         <header>
           <h1> Recent trips</h1>
           <form className="new-trip" onSubmit={this.handleSubmit.bind(this)}>
-            <input
+
+              <input
               type="text"
               ref="empId"
               placeholder="Employee ID"
@@ -48,17 +51,39 @@ class App extends Component {
               ref="projCode"
               placeholder="Project Code"
             />
+
             <input
               type="text"
               ref="destination"
               placeholder="Destination"
             />
-            <input type="submit" value="Submit" />
+
+            
+            <Button type="submit" className="btn btn-default">Submit</Button>
+
           </form>
         </header>
-        <ul>
+        <Grid>
+            <Row className="show-grid">
+              <Col xs={6} md={1}>check
+              </Col>
+              <Col xs={6} md={2}>
+                <span>
+                  Project Code
+                </span>
+              </Col>
+              <Col xs={6} md={2}>
+                <span>Emp ID</span>
+              </Col>
+              <Col xs={6} md={3}>
+                <span> Destination</span>
+              </Col>
+              <Col xs={6} md={2}>del
+              </Col>
+            </Row>
             {this.renderTrips()}
-        </ul>
+        </Grid>
+
       </div>
     );
   }

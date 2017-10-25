@@ -17,7 +17,7 @@ body {
   font-size: 14px;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   min-height: 100%;
   background: white;
@@ -42,6 +42,9 @@ form {
   margin-top: 10px;
   margin-bottom: -10px;
   position: relative;
+}
+input {
+  display:inline;
 }
 .new-trip input {
 
@@ -80,23 +83,15 @@ li {
 }
 li .text {
   margin-left: 10px;
-
 }
 
 li.checked {
   color: #888;
-
 }
-
-
 
 li.checked .text {
-
   text-decoration: line-through;
-
 }
-
-
 
 li.private {
 
